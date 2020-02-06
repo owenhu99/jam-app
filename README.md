@@ -28,5 +28,5 @@ The goal of this project is for local musicians to find like-minded people to ja
   "files.eol": "\n",
   "html.format.enable": true,
   "html.format.wrapAttributes": "force-aligned",
- }
+}
   
