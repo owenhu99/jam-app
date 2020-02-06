@@ -15,3 +15,18 @@ The goal of this project is for local musicians to find like-minded people to ja
 - Push to remote once finished
 - Merge to central branch on github and deal with conflicts
 - Close issue
+
+## Auto-Formatting in Visual Studio Code
+
+-Go to ```Preferences```->```Settings``` then click on the ```{}``` on top-right which is called ```Setttings (JSON)```
+-Paste the following commands:
+```
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "html.format.enable": true,
+  "html.format.wrapAttributes": "force-aligned",
+  }
+  
