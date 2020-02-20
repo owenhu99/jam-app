@@ -91,7 +91,22 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    return Scaffold(
+    final signUpButton = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Color(0xff01A0C7),
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {},
+        child: Text("Sign Up",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
+
+    return Scaffold( // this scaffold is where all the components are written onto the screen
       body: SingleChildScrollView(
       child: Center(
         child: Container(
@@ -117,6 +132,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 35.0,
                 ),
                 loginButon,
+                SizedBox(
+                  height: 15.0, // changes height between the two buttons
+                ),
+                signUpButton,
                 SizedBox(
                   height: 15.0,
                 ),
