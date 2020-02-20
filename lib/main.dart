@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Jam App',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -76,35 +77,40 @@ class _MyHomePageState extends State<MyHomePage> {
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-    final loginButon = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-        child: Text("Login",
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
+    final passwordHyperlink = RichText(
+      text: TextSpan(
+        text: 'Forgot Password',
+        style: new TextStyle(
+          color: Colors.blue,
+          decoration: TextDecoration.underline),
+      )
     );
 
-    final signUpButton = Material(
+    final loginButon = RaisedButton(
       elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
+      onPressed: () {},
       color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-        child: Text("Sign Up",
+      shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(18.0),
+          side: BorderSide(color: Colors.blue[100])),
+      child: Text("Login",
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
-    );
+      );
+
+    final signUpButton = RaisedButton(
+      elevation: 5.0,
+      onPressed: () {},
+      color: Color(0xff01A0C7),
+      shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(18.0),
+          side: BorderSide(color: Colors.blue[100])),
+      child: Text("Sign Up",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      );
 
     return Scaffold( // this scaffold is where all the components are written onto the screen
       body: SingleChildScrollView(
@@ -129,13 +135,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(height: 25.0),
                 passwordField,
                 SizedBox(
-                  height: 35.0,
+                  height: 15.0,
                 ),
-                loginButon,
+                passwordHyperlink,
+                SizedBox(
+                  height: 15.0,
+                ),
+                Row(children: <Widget>[
+                  loginButon, 
+                  SizedBox(width: 25.0), 
+                  signUpButton],
+                  mainAxisAlignment: MainAxisAlignment.center,),
                 SizedBox(
                   height: 15.0, // changes height between the two buttons
                 ),
-                signUpButton,
                 SizedBox(
                   height: 15.0,
                 ),
