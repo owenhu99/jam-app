@@ -37,7 +37,14 @@ class _MySearchPageState extends State<MySearchPage> {
 
     final avatarIcon = IconButton(
       icon: Icon(IconData(59475, fontFamily: 'MaterialIcons')), // Pre-defined icon
-      onPressed: null);
+      onPressed: () {},
+      iconSize: 40,
+    );
+
+    final addIcon = IconButton(
+      icon: Icon(IconData(57669, fontFamily: 'MaterialIcons')), // Pre-defined icon
+      onPressed:() {},
+    );
 
     final avatarHyperlink = RichText(
       text: TextSpan(
@@ -70,12 +77,24 @@ class _MySearchPageState extends State<MySearchPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(height: 10.0),
-                Row(children: <Widget>[
-                  avatarIcon, 
-                  SizedBox(width: 15.0),
-                  avatarHyperlink
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    avatarIcon, 
+                    SizedBox(width: 15.0),
+                    avatarHyperlink
                 ]),
-                searchBar,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new SizedBox(
+                      child: searchBar,
+                      height: 25,
+                      width: 150,
+                      ), 
+                    SizedBox(width: 15.0),
+                    addIcon,
+                ]),
               ],
             ),
           ),
