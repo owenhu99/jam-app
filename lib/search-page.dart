@@ -76,6 +76,21 @@ class _MySearchPageState extends State<MySearchPage> {
           borderRadius: BorderRadius.all(Radius.circular(25.0)))),
       );
 
+  final textBoxTemp = Container(
+    padding: const EdgeInsets.all(15.0),
+    alignment: Alignment.topLeft,
+    child: Text('Test Form',
+      style: Theme.of(context)
+        .textTheme
+        .display1
+        .copyWith(color: Colors.white)),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      color: const Color(0xff7c94b6),
+    ),
+    height: 300,
+  );
+
       return Scaffold( // this scaffold is where all the components are written onto the screen
       body: SingleChildScrollView(
       child: Center(
@@ -105,6 +120,7 @@ class _MySearchPageState extends State<MySearchPage> {
                     SizedBox(width: 15.0),
                     addIcon,
                 ]),
+                textBoxTemp,
               ],
             ),
           ),
