@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:jam_app/main.dart';
 
 void main() => runApp(SearchPage());
 
@@ -34,6 +35,16 @@ class _MySearchPageState extends State<MySearchPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    final backIcon = IconButton(
+      icon: Icon(IconData(58848, fontFamily: 'MaterialIcons', matchTextDirection: true)), // Pre-defined icon
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MyApp()),
+        );},
+      iconSize: 20,
+    );
 
     final avatarIcon = IconButton(
       icon: Icon(IconData(59475, fontFamily: 'MaterialIcons')), // Pre-defined icon
@@ -76,12 +87,11 @@ class _MySearchPageState extends State<MySearchPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 10.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
+                    backIcon,
                     avatarIcon, 
-                    SizedBox(width: 15.0),
                     avatarHyperlink
                 ]),
                 Row(
