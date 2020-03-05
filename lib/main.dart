@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:jam_app/search-page.dart';
 
 void main() => runApp(MyApp());
 
@@ -88,8 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final loginButon = RaisedButton(
       elevation: 5.0,
-      onPressed: () {},
       color: Color(0xff01A0C7),
+      onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SearchPage()),
+            );},
       shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(18.0),
           side: BorderSide(color: Colors.blue[100])),
