@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:jam_app/search-page.dart';
 
 void main() => runApp(MyApp());
 
@@ -112,6 +113,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white, fontWeight: FontWeight.bold)),
       );
 
+      final linkButton = RaisedButton(
+        elevation: 5.0,
+        color: Color(0xff01A0C7),
+        onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SearchPage()),
+            );},
+        shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(18.0),
+          side: BorderSide(color: Colors.blue[100])),
+        child: Text("Next Page",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      );
+
     return Scaffold( // this scaffold is where all the components are written onto the screen
       body: SingleChildScrollView(
       child: Center(
@@ -149,6 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 15.0, // changes height between the two buttons
                 ),
+                linkButton,
                 SizedBox(
                   height: 15.0,
                 ),
